@@ -9,6 +9,7 @@ type NoteProps = {
 
 export function Note({onDelete}:NoteProps){
     const note = useNote()
+    console.log(JSON.stringify(note.id))
     const navigate = useNavigate()
     return <>
         <Row className="align-items-center mb-4">
@@ -29,9 +30,9 @@ export function Note({onDelete}:NoteProps){
         </Col>
         <Col xs="auto">
             <Stack gap={2} direction="horizontal">
-                <Link to={`${note.id}/edit`}>
+                <Link to="edit">
                     <Button variant="primary">
-                        Edit
+                        Edit Tag
                     </Button>
                 </Link>
                 <Button onClick={()=>{
